@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Referencias del Administrador REICOOZX GC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap');
+        
+        :root {
+            --primary: #3b82f6;
+            --primary-dark: #1d4ed8;
+            --secondary: #6366f1;
+            --accent: #10b981;
+            --dark: #111827;
+            --light: #f9fafb;
+            --card-bg: #1e293b;
+            --gamer-accent: #38bdf8;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0f172a;
+            color: var(--light);
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(99, 102, 241, 0.08) 0%, transparent 25%);
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 600;
+        }
+        
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:active {
+            transform: scale(0.98);
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+        
+        .btn-primary {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            transition: all 0.3s ease;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .btn-primary:active {
+            transform: scale(0.95);
+        }
+        
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+        
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(20, 20);
+                opacity: 0;
+            }
+        }
+        
+        .rating {
+            color: #fbbf24;
+        }
+        
+        .avatar {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+        
+        .stats-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .glow-text {
+            position: relative;
+        }
+        
+        .glow-text::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gamer-accent), transparent);
+        }
+        
+        .header-bg {
+            background: linear-gradient(to right, #1e293b, #0f172a);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233b82f6' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        
+        .comment-animation {
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .tab-active {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+        }
+        
+        .input-field {
+            background-color: rgba(15, 23, 42, 0.7);
+            border: 1px solid #334155;
+            color: white;
+            padding: 0.75rem 1rem;
+            border-radius: 0.375rem;
+            transition: all 0.3s ease;
+            font-size: 16px; /* Evita el zoom en iOS */
+        }
+        
+        .input-field:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+        }
+        
+        .contact-card {
+            background: linear-gradient(135deg, #1e40af, #3730a3);
+            border-radius: 0.5rem;
+            padding: 1.25rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .top-countries {
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 0.5rem;
+            padding: 1.25rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .country-badge {
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            margin-right: 0.4rem;
+            margin-bottom: 0.4rem;
+            transition: all 0.3s ease;
+            font-size: 0.8rem;
+        }
+        
+        .badge-cuba {
+            background-color: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+        }
+        
+        .badge-mexico {
+            background-color: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+        }
+        
+        .badge-peru {
+            background-color: rgba(234, 179, 8, 0.2);
+            color: #eab308;
+        }
+        
+        .badge-argentina {
+            background-color: rgba(59, 130, 246, 0.2);
+            color: #3b82f6;
+        }
+        
+        .badge-colombia {
+            background-color: rgba(236, 72, 153, 0.2);
+            color: #ec4899;
+        }
+        
+        .progress-bar {
+            width: 0%;
+            transition: width 1s ease-in-out;
+        }
+        
+        .shake {
+            animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+        }
+        
+        @keyframes shake {
+            10%, 90% {
+                transform: translate3d(-1px, 0, 0);
+            }
+            20%, 80% {
+                transform: translate3d(2px, 0, 0);
+            }
+            30%, 50%, 70% {
+                transform: translate3d(-4px, 0, 0);
+            }
+            40%, 60% {
+                transform: translate3d(4px, 0, 0);
+            }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+            }
+        }
+        
+        .slide-in {
+            animation: slideIn 0.5s forwards;
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .slide-in-right {
+            animation: slideInRight 0.5s forwards;
+        }
+        
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s forwards;
+        }
+        
+        .scale-in {
+            animation: scaleIn 0.3s forwards;
+        }
+        
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        .rotate-in {
+            animation: rotateIn 0.5s forwards;
+        }
+        
+        @keyframes rotateIn {
+            from {
+                transform: rotate(-10deg) scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: rotate(0) scale(1);
+                opacity: 1;
+            }
+        }
+        
+        .bounce {
+            animation: bounce 0.5s;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        .glow {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #fff, 0 0 10px #3b82f6, 0 0 15px #3b82f6;
+            }
+            to {
+                text-shadow: 0 0 10px #fff, 0 0 20px #3b82f6, 0 0 30px #3b82f6;
+            }
+        }
+        
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.5;
+            animation-name: particleAnimation;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        
+        @keyframes particleAnimation {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.5;
+            }
+            90% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(20vw);
+                opacity: 0;
+            }
+        }
+        
+        /* Estilos específicos para móvil */
+        .mobile-tab-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
+            padding-bottom: 5px;
+        }
+        
+        .mobile-tab-container::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+        
+        .mobile-tab-container .flex {
+            display: inline-flex;
+            min-width: max-content;
+        }
+        
+        /* Ajustes para pantallas pequeñas */
+        @media (max-width: 640px) {
+            .card {
+                padding: 1rem !important;
+            }
+            
+            h1 {
+                font-size: 2rem !important;
+            }
+            
+            h2 {
+                font-size: 1.5rem !important;
+            }
+            
+            .btn-primary {
+                padding: 0.6rem 1.2rem;
+            }
+            
+            .country-badge {
+                padding: 0.3rem 0.6rem;
+                font-size: 0.7rem;
+                margin-right: 0.3rem;
+                margin-bottom: 0.3rem;
+            }
+            
+            .avatar {
+                width: 36px;
+                height: 36px;
+                font-size: 1rem;
+            }
+            
+            .stats-card {
+                padding: 0.8rem;
+            }
+        }
+        
+        /* Mejoras para la experiencia táctil */
+        button, a {
+            touch-action: manipulation;
+        }
+        
+        /* Animación de carga */
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            border-top-color: var(--primary);
+            animation: spin 1s ease-in-out infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        /* Mejoras para el scroll */
+        .smooth-scroll {
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        /* Estilo para el botón flotante */
+        .floating-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+        
+        .floating-button:active {
+            transform: scale(0.9);
+        }
+        
+        /* Estilo para el botón de volver arriba */
+        .back-to-top {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Mejoras para el formulario en móvil */
+        input, textarea, select {
+            font-size: 16px !important; /* Evita el zoom en iOS */
+        }
+        
+        /* Estilo para el indicador de carga */
+        .loading-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            z-index: 1000;
+            width: 0%;
+            transition: width 0.2s ease;
+        }
+        
+        /* Estilo para el indicador de scroll */
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            z-index: 1000;
+            width: 0%;
+        }
+        
+        /* Estilo para el botón de compartir */
+        .share-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--primary);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 9999px;
+            padding: 0.5rem 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .share-button:active {
+            background: rgba(59, 130, 246, 0.2);
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body class="min-h-screen smooth-scroll">
+    <div class="loading-bar" id="loadingBar"></div>
+    <div class="scroll-indicator" id="scrollIndicator"></div>
+    <div class="particles" id="particles"></div>
+    
+    <header class="header-bg py-8 px-4 relative bg-animate" style="background-image: linear-gradient(45deg, #0f172a, #1e293b, #1e40af, #0f172a);">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col items-center">
+                <div class="mb-6 text-center slide-in">
+                    <h1 class="text-3xl sm:text-4xl font-bold mb-2 glow">REICOOZX GC</h1>
+                    <p class="text-lg text-gray-300 typing-effect">Referencias del Administrador</p>
+                </div>
+                <div class="grid grid-cols-2 gap-3 w-full max-w-xs">
+                    <div class="stats-card text-center scale-in float" style="animation-delay: 0.1s">
+                        <div class="text-2xl font-bold text-blue-400">+2000</div>
+                        <div class="text-xs text-gray-400">Referencias</div>
+                    </div>
+                    <div class="stats-card text-center scale-in float" style="animation-delay: 0.3s">
+                        <div class="text-2xl font-bold text-green-400">100%</div>
+                        <div class="text-xs text-gray-400">Confiable</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="py-6 px-4">
+        <div class="max-w-lg mx-auto">
+            <div class="mb-6">
+                <div class="contact-card mb-6 fade-in">
+                    <h2 class="text-xl font-bold mb-3">Contactar al REICOOZX GC</h2>
+                    <div class="flex items-center">
+                        <div class="bg-white bg-opacity-20 p-3 rounded-full mr-4 pulse">
+                            <i class="fas fa-phone text-lg"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-300">Número de contacto:</p>
+                            <p class="text-lg font-bold">+5363717376</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mb-6">
+                <div class="top-countries fade-in" style="animation-delay: 0.2s">
+                    <h3 class="text-lg font-bold mb-3">Países con más clientes</h3>
+                    <div class="flex flex-wrap">
+                        <span class="country-badge badge-cuba">
+                            <i class="fas fa-map-marker-alt mr-1"></i> Cuba
+                        </span>
+                        <span class="country-badge badge-mexico">
+                            <i class="fas fa-map-marker-alt mr-1"></i> México
+                        </span>
+                        <span class="country-badge badge-peru">
+                            <i class="fas fa-map-marker-alt mr-1"></i> Perú
+                        </span>
+                        <span class="country-badge badge-colombia">
+                            <i class="fas fa-map-marker-alt mr-1"></i> Colombia
+                        </span>
+                        <span class="country-badge badge-argentina">
+                            <i class="fas fa-map-marker-alt mr-1"></i> Argentina
+                        </span>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gray-700">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm">Cuba</span>
+                            <span class="text-sm">35%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-2">
+                            <div class="bg-red-500 h-2 rounded-full progress-bar" id="cuba-bar" data-width="35%"></div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-2 mt-3">
+                            <span class="text-sm">México</span>
+                            <span class="text-sm">25%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-2">
+                            <div class="bg-green-500 h-2 rounded-full progress-bar" id="mexico-bar" data-width="25%"></div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-2 mt-3">
+                            <span class="text-sm">Perú</span>
+                            <span class="text-sm">18%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-2">
+                            <div class="bg-yellow-500 h-2 rounded-full progress-bar" id="peru-bar" data-width="18%"></div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-2 mt-3">
+                            <span class="text-sm">Colombia</span>
+                            <span class="text-sm">12%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-2">
+                            <div class="bg-pink-500 h-2 rounded-full progress-bar" id="colombia-bar" data-width="12%"></div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-2 mt-3">
+                            <span class="text-sm">Argentina</span>
+                            <span class="text-sm">10%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-2">
+                            <div class="bg-blue-500 h-2 rounded-full progress-bar" id="argentina-bar" data-width="10%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card p-4 mb-6 rotate-in" style="animation-delay: 0.3s">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-bold glow-text">Referencias de Usuarios</h2>
+                    <div class="text-xs text-gray-400">
+                        <span class="text-blue-400 font-bold">+2000</span> comentarios
+                    </div>
+                </div>
+                
+                <div class="mobile-tab-container mb-4">
+                    <div class="flex gap-2">
+                        <button id="filterAll" class="px-3 py-1 rounded-full tab-active transition-all duration-300 text-sm whitespace-nowrap">Todos</button>
+                        <button id="filterCuba" class="px-3 py-1 rounded-full bg-gray-700 hover:bg-gray-600 transition-all duration-300 text-sm whitespace-nowrap">Cuba</button>
+                        <button id="filterMexico" class="px-3 py-1 rounded-full bg-gray-700 hover:bg-gray-600 transition-all duration-300 text-sm whitespace-nowrap">México</button>
+                        <button id="filterPeru" class="px-3 py-1 rounded-full bg-gray-700 hover:bg-gray-600 transition-all duration-300 text-sm whitespace-nowrap">Perú</button>
+                        <button id="filterColombia" class="px-3 py-1 rounded-full bg-gray-700 hover:bg-gray-600 transition-all duration-300 text-sm whitespace-nowrap">Colombia</button>
+                        <button id="filterArgentina" class="px-3 py-1 rounded-full bg-gray-700 hover:bg-gray-600 transition-all duration-300 text-sm whitespace-nowrap">Argentina</button>
+                    </div>
+                </div>
+                
+                <div id="commentContainer" class="space-y-4">
+                    <!-- Los comentarios se generarán dinámicamente -->
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <button id="loadMoreBtn" class="btn-primary px-6 py-2 text-sm">
+                        <i class="fas fa-sync-alt mr-2"></i> Cargar más referencias
+                    </button>
+                </div>
+            </div>
+            
+            <div class="card p-4 fade-in" style="animation-delay: 0.5s">
+                <h2 class="text-xl font-bold mb-4 glow-text">Deja tu referencia</h2>
+                <form id="commentForm" class="space-y-4">
+                    <div>
+                        <label class="block mb-1 text-sm font-medium text-gray-300">Nombre</label>
+                        <input type="text" id="commentName" class="input-field w-full" placeholder="Tu nombre">
+                    </div>
+                    <div>
+                        <label class="block mb-1 text-sm font-medium text-gray-300">País</label>
+                        <select id="commentCountry" class="input-field w-full">
+                            <option value="Cuba">Cuba</option>
+                            <option value="México">México</option>
+                            <option value="Perú">Perú</option>
+                            <option value="Colombia">Colombia</option>
+                            <option value="Argentina">Argentina</option>
+                            <option value="Chile">Chile</option>
+                            <option value="Ecuador">Ecuador</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block mb-1 text-sm font-medium text-gray-300">Tu comentario</label>
+                        <textarea id="commentText" class="input-field w-full h-24" placeholder="Comparte tu experiencia con REICOOZX GC"></textarea>
+                    </div>
+                    <div>
+                        <label class="block mb-1 text-sm font-medium text-gray-300">Calificación</label>
+                        <div class="flex space-x-2 text-2xl rating" id="ratingStars">
+                            <i class="fas fa-star cursor-pointer" data-rating="1"></i>
+                            <i class="fas fa-star cursor-pointer" data-rating="2"></i>
+                            <i class="fas fa-star cursor-pointer" data-rating="3"></i>
+                            <i class="fas fa-star cursor-pointer" data-rating="4"></i>
+                            <i class="fas fa-star cursor-pointer" data-rating="5"></i>
+                        </div>
+                    </div>
+                    <div class="pt-2">
+                        <button type="submit" class="btn-primary w-full py-3">
+                            <i class="fas fa-paper-plane mr-2"></i> Enviar Referencia
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="mt-6 mb-4 text-center">
+                <button id="shareButton" class="share-button mx-auto">
+                    <i class="fas fa-share-alt"></i>
+                    <span>Compartir</span>
+                </button>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="py-6 px-4 border-t border-gray-800">
+        <div class="max-w-lg mx-auto text-center text-gray-400 text-sm">
+            <p>© 2023 REICOOZX GC - Todos los derechos reservados</p>
+        </div>
+    </footer>
+    
+    <button id="backToTop" class="floating-button back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mostrar barra de carga al iniciar
+        const loadingBar = document.getElementById('loadingBar');
+        loadingBar.style.width = '30%';
+        
+        // Crear partículas animadas en el fondo (versión optimizada para móvil)
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const colors = ['#3b82f6', '#6366f1', '#8b5cf6', '#ec4899', '#10b981'];
+            
+            // Reducir el número de partículas en móvil
+            const isMobile = window.innerWidth < 768;
+            const particleCount = isMobile ? 15 : 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Tamaño aleatorio
+                const size = Math.random() * 4 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Posición inicial aleatoria
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100 + 100; // Empezar desde abajo
+                particle.style.left = `${posX}vw`;
+                particle.style.bottom = `${-posY}px`;
+                
+                // Color aleatorio
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.backgroundColor = color;
+                
+                // Duración aleatoria
+                const duration = Math.random() * 20 + 10;
+                particle.style.animationDuration = `${duration}s`;
+                
+                // Retraso aleatorio
+                const delay = Math.random() * 5;
+                particle.style.animationDelay = `${delay}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        // Datos de muestra para los comentarios - más realistas y naturales con errores típicos
+        const cubaComments = [
+            "la vdd q el servicio estuvo buenisimo, yo tenia miedo xq ya me habian estafado antes pero este chamaco es 100% legal, se los recomiendo a full",
+            "miren yo no confio en nadie pero este chamaco me sorprendio, todo legal y rapido. si buscan algo seguro, REICOOZX GC es la opcion",
+            "llevo 3 meses trabajando con el y nunca un problema, todo perfecto y el servicio es d 10. recomendado 100% real no fake",
+            "yo pensaba q era estafa como todo lo q hay x internet pero nada q ver, el chamaco cumple con todo y es super profesional",
+            "buenisimo el servicio, rapido y sin vueltas. el admin siempre responde al toke y explica todo bn. 5 estrellas de una",
+            "gente no lo duden, es 100% confiable. yo ya hice como 5 tramites con el y todo siempre perfecto, nada d estafas",
+            "desde cuba les digo q pueden confiar, yo ya trabaje varias veces con el y todo genial, muy serio el muchacho",
+            "la vdd q me sorprendio lo rapido q fue todo, en menos d 1 dia ya estaba resuelto mi problema. gracias bro!",
+            "el servicio esta brutal, todo legal y sin problemas. el chamaco REICOOZX GC sabe lo q hace, confien",
+            "yo ya habia probado con otros y siempre me estafaban, pero este chamaco es diferente, todo transparente y legal",
+            "buenisima onda el admin, explica todo paso x paso y tiene paciencia. lo recomiendo a full, 100% confiable",
+            "desde cuba puedo decir q el servicio es excelente, rapido y sin complicaciones. el chamaco cumple con todo",
+            "yo estaba re desconfiado pero me la jugue y salio todo bn. el chamaco es serio y hace las cosas como debe ser",
+            "tremendo servicio, todo rapido y sin problemas. ya lo recomende a todos mis panas y todos contentos",
+            "miren, yo soy super desconfiado pero este chamaco me demostro q hay gente seria todavia. todo perfecto y legal"
+        ];
+        
+        const mexicoComments = [
+            "desde mexico puedo decir q el servicio es excelente, rapido y sin complicaciones. el vato cumple con todo",
+            "la neta q no esperaba q fuera tan bueno, pero me sorprendio para bn, todo rapido y sin pedos",
+            "yo estaba bn esceptico pero me anime y la vdd q todo salio perfecto, el admin es 100% confiable",
+            "el servicio esta cabron, todo legal y el pibe siempre responde rapido, lo recomiendo a todos",
+            "desde mexico les digo q este servicio es lo mejor q he encontrado, todo perfecto y el vato muy serio"
+        ];
+        
+        const peruComments = [
+            "desde peru les digo q pueden confiar, yo ya hice varios tramites y todo siempre bn. el chico es serio",
+            "yo habia tenido malas experiencias antes pero este admin es diferente, todo legal y transparente",
+            "buenisimo el servicio, en serio. yo pensaba q me iban a estafar como siempre pero no, todo salio genial",
+            "el pibe es super profesional, explica todo bn y cumple con lo q promete. lo recomiendo a full",
+            "desde peru puedo decir q el servicio es excelente, todo rapido y sin problemas. confien en el"
+        ];
+        
+        const colombiaComments = [
+            "desde colombia puedo decir q el servicio es excelente, todo rapido y sin problemas. confien en el",
+            "yo ya he trabajado varias veces con REICOOZX GC y siempre todo perfecto, es 100% confiable",
+            "la vdd q me sorprendio para bn, todo el proceso fue rapido y sin complicaciones. gracias bro!",
+            "el servicio esta d puta madre, todo legal y el admin siempre atento. 5 estrellas d una",
+            "desde colombia les digo q pueden confiar, yo ya hice varios tramites y todo siempre bn. el chico es serio"
+        ];
+        
+        const argentinaComments = [
+            "desde argentina les digo q pueden confiar, yo ya he trabajado con el y todo siempre bn",
+            "yo estaba re cagado pero me anime y la vdd q todo salio perfecto, el admin es 100% confiable",
+            "el servicio esta increible, todo legal y sin problemas, el pibe sabe lo q hace y es muy profesional",
+            "desde argentina puedo decir q el servicio es excelente, todo rapido y el admin muy serio",
+            "che, la verdad que el servicio está buenísimo, todo rápido y el pibe siempre responde al toque"
+        ];
+        
+        // Nombres específicos por país
+        const cubaNames = ["Yosvany P.", "Dayami R.", "Lázaro H.", "Yanet G.", "Yuniel C.", "Lisandra D.", "Osmany T.", "Yuliet F.", "Yosbel", "Yanelis", "Yunier", "Yusimi", "Yordanis", "Yolanda", "Maikel", "Yusleidy", "Reinier", "Lisbet", "Yoandry", "Mileidy"];
+        const mexicoNames = ["Juan M.", "María G.", "Pedro L.", "Guadalupe R.", "José A.", "Alejandra S.", "Miguel Á.", "Fernanda T.", "El Vato", "La Chava", "El Compa", "La Morra"];
+        const peruNames = ["Carlos P.", "Rosa L.", "Luis C.", "Ana M.", "Jorge S.", "Lucía T.", "El Chato", "La Flaca", "El Pata", "La Chinita"];
+        const colombiaNames = ["Andrés C.", "Carolina R.", "Santiago M.", "Valentina L.", "El Parcero", "La Parcera", "El Pana", "La Pana"];
+        const argentinaNames = ["Martín A.", "Florencia B.", "Matías C.", "Luciana D.", "El Pibe", "La Piba", "El Che", "La Mina"];
+        
+        const dates = ["hace 2 días", "hace 1 semana", "hace 3 días", "ayer", "hace 5 días", "hace 2 semanas", "hace 1 mes", "hace 3 horas", "hace 12 horas", "hace 4 días", "hace 2 meses", "hace 6 días"];
+        
+        // Función para generar un comentario aleatorio basado en el país
+        function generateRandomComment() {
+            // Elegir país con ponderación
+            const rand = Math.random();
+            let country, comment, nameList;
+            
+            if (rand < 0.35) {
+                country = "Cuba";
+                comment = cubaComments[Math.floor(Math.random() * cubaComments.length)];
+                nameList = cubaNames;
+            } else if (rand < 0.6) {
+                country = "México";
+                comment = mexicoComments[Math.floor(Math.random() * mexicoComments.length)];
+                nameList = mexicoNames;
+            } else if (rand < 0.78) {
+                country = "Perú";
+                comment = peruComments[Math.floor(Math.random() * peruComments.length)];
+                nameList = peruNames;
+            } else if (rand < 0.9) {
+                country = "Colombia";
+                comment = colombiaComments[Math.floor(Math.random() * colombiaComments.length)];
+                nameList = colombiaNames;
+            } else {
+                country = "Argentina";
+                comment = argentinaComments[Math.floor(Math.random() * argentinaComments.length)];
+                nameList = argentinaNames;
+            }
+            
+            // Elegir un nombre del país correspondiente
+            const name = nameList[Math.floor(Math.random() * nameList.length)];
+            const date = dates[Math.floor(Math.random() * dates.length)];
+            const rating = Math.random() < 0.8 ? 5 : 4; // 80% de probabilidad de 5 estrellas, 20% de 4 estrellas
+            
+            return {
+                name,
+                country,
+                comment,
+                date,
+                rating
+            };
+        }
+        
+        // Función para crear el HTML de un comentario
+        function createCommentHTML(comment) {
+            const stars = '★'.repeat(comment.rating) + '☆'.repeat(5 - comment.rating);
+            
+            return `
+                <div class="card p-3 comment-animation" data-country="${comment.country.toLowerCase()}">
+                    <div class="flex items-start">
+                        <div class="avatar mr-3">
+                            ${comment.name.charAt(0)}
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-center mb-1">
+                                <h3 class="font-bold text-sm">${comment.name}</h3>
+                                <span class="text-xs text-gray-400">${comment.date}</span>
+                            </div>
+                            <div class="mb-1">
+                                <span class="px-2 py-0.5 bg-gray-700 rounded-full text-xs">
+                                    <i class="fas fa-map-marker-alt mr-1"></i> ${comment.country}
+                                </span>
+                            </div>
+                            <div class="rating mb-2 text-sm">${stars}</div>
+                            <p class="text-gray-300 text-sm">${comment.comment}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Cargar comentarios iniciales
+        const commentContainer = document.getElementById('commentContainer');
+        let currentFilter = 'all';
+        
+        function loadComments(count = 5) {
+            // Mostrar indicador de carga
+            const loadingIndicator = document.createElement('div');
+            loadingIndicator.className = 'loading-spinner my-4';
+            loadingIndicator.id = 'loadingSpinner';
+            commentContainer.appendChild(loadingIndicator);
+            
+            // Simular carga
+            setTimeout(() => {
+                // Eliminar indicador de carga
+                const spinner = document.getElementById('loadingSpinner');
+                if (spinner) spinner.remove();
+                
+                // Cargar comentarios
+                for (let i = 0; i < count; i++) {
+                    const comment = generateRandomComment();
+                    const commentHTML = createCommentHTML(comment);
+                    commentContainer.innerHTML += commentHTML;
+                }
+                
+                // Aplicar filtro actual
+                if (currentFilter !== 'all') {
+                    filterComments(currentFilter);
+                }
+            }, 500);
+        }
+        
+        // Cargar comentarios iniciales (menos en móvil para mejor rendimiento)
+        const isMobile = window.innerWidth < 768;
+        loadComments(isMobile ? 20 : 40);
+        
+        // Botón para cargar más comentarios
+        document.getElementById('loadMoreBtn').addEventListener('click', function() {
+            this.classList.add('bounce');
+            setTimeout(() => {
+                this.classList.remove('bounce');
+            }, 500);
+            loadComments(5);
+        });
+        
+        // Filtros de comentarios
+        document.getElementById('filterAll').addEventListener('click', function() {
+            filterComments('all');
+            setActiveFilter(this);
+        });
+        
+        document.getElementById('filterCuba').addEventListener('click', function() {
+            filterComments('cuba');
+            setActiveFilter(this);
+        });
+        
+        document.getElementById('filterMexico').addEventListener('click', function() {
+            filterComments('méxico');
+            setActiveFilter(this);
+        });
+        
+        document.getElementById('filterPeru').addEventListener('click', function() {
+            filterComments('perú');
+            setActiveFilter(this);
+        });
+        
+        document.getElementById('filterColombia').addEventListener('click', function() {
+            filterComments('colombia');
+            setActiveFilter(this);
+        });
+        
+        document.getElementById('filterArgentina').addEventListener('click', function() {
+            filterComments('argentina');
+            setActiveFilter(this);
+        });
+        
+        function filterComments(country) {
+            currentFilter = country;
+            const comments = document.querySelectorAll('#commentContainer > div.card');
+            
+            comments.forEach(comment => {
+                if (country === 'all' || comment.dataset.country.toLowerCase() === country.toLowerCase()) {
+                    comment.style.display = 'block';
+                    setTimeout(() => {
+                        comment.classList.add('comment-animation');
+                    }, 10);
+                } else {
+                    comment.style.display = 'none';
+                    comment.classList.remove('comment-animation');
+                }
+            });
+        }
+        
+        function setActiveFilter(button) {
+            const buttons = document.querySelectorAll('#filterAll, #filterCuba, #filterMexico, #filterPeru, #filterColombia, #filterArgentina');
+            buttons.forEach(btn => {
+                btn.classList.remove('tab-active');
+                btn.classList.add('bg-gray-700', 'hover:bg-gray-600');
+            });
+            button.classList.add('tab-active');
+            button.classList.remove('bg-gray-700', 'hover:bg-gray-600');
+        }
+        
+        // Manejar el envío del formulario de comentarios
+        let userRating = 5; // Por defecto 5 estrellas
+        
+        // Funcionalidad para las estrellas de calificación
+        const stars = document.querySelectorAll('#ratingStars .fa-star');
+        stars.forEach((star, index) => {
+            star.addEventListener('click', () => {
+                userRating = parseInt(star.getAttribute('data-rating'));
+                stars.forEach((s, i) => {
+                    if (i < userRating) {
+                        s.classList.add('text-yellow-400');
+                    } else {
+                        s.classList.remove('text-yellow-400');
+                    }
+                });
+            });
+            
+            // Efecto hover/touch
+            star.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                const rating = parseInt(star.getAttribute('data-rating'));
+                stars.forEach((s, i) => {
+                    if (i < rating) {
+                        s.classList.add('text-yellow-300');
+                    }
+                });
+            }, {passive: false});
+            
+            star.addEventListener('touchend', () => {
+                stars.forEach((s) => {
+                    s.classList.remove('text-yellow-300');
+                });
+            });
+        });
+        
+        // Inicializar todas las estrellas como seleccionadas
+        stars.forEach(star => star.classList.add('text-yellow-400'));
+        
+        document.getElementById('commentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('commentName').value;
+            const country = document.getElementById('commentCountry').value;
+            const commentText = document.getElementById('commentText').value;
+            
+            if (name && commentText) {
+                const newComment = {
+                    name: name,
+                    country: country,
+                    comment: commentText,
+                    date: "hace unos momentos",
+                    rating: userRating
+                };
+                
+                const commentHTML = createCommentHTML(newComment);
+                
+                // Insertar el nuevo comentario con animación
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = commentHTML;
+                const commentElement = tempDiv.firstElementChild;
+                commentElement.style.opacity = '0';
+                commentElement.style.transform = 'translateY(-20px)';
+                
+                commentContainer.insertBefore(commentElement, commentContainer.firstChild);
+                
+                // Forzar un reflow para que la animación funcione
+                commentElement.offsetHeight;
+                
+                // Aplicar la animación
+                commentElement.style.transition = 'all 0.5s ease';
+                commentElement.style.opacity = '1';
+                commentElement.style.transform = 'translateY(0)';
+                
+                // Limpiar formulario
+                this.reset();
+                // Resetear estrellas
+                stars.forEach(star => star.classList.add('text-yellow-400'));
+                userRating = 5;
+                
+                // Mostrar mensaje de éxito
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-check-circle mr-2"></i> ¡Comentario enviado!';
+                submitBtn.classList.add('bg-green-500');
+                
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.classList.remove('bg-green-500');
+                }, 2000);
+                
+                // Hacer scroll hacia arriba para ver el comentario
+                window.scrollTo({
+                    top: commentContainer.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            }
+        });
+        
+        // Animación de las barras de progreso
+        function animateProgressBars() {
+            const progressBars = document.querySelectorAll('.progress-bar');
+            progressBars.forEach(bar => {
+                setTimeout(() => {
+                    bar.style.width = bar.getAttribute('data-width');
+                }, 300);
+            });
+        }
+        
+        // Observador de intersección para animar elementos cuando son visibles
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.classList.contains('top-countries')) {
+                        animateProgressBars();
+                    }
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        // Observar elementos para animaciones
+        document.querySelectorAll('.fade-in, .slide-in, .slide-in-right, .scale-in, .rotate-in, .top-countries').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Botón para volver arriba
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+            
+            // Actualizar indicador de scroll
+            const scrollIndicator = document.getElementById('scrollIndicator');
+            const scrollPercentage = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+            scrollIndicator.style.width = `${scrollPercentage}%`;
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Botón de compartir
+        document.getElementById('shareButton').addEventListener('click', async () => {
+            try {
+                if (navigator.share) {
+                    await navigator.share({
+                        title: 'REICOOZX GC - Referencias del Administrador',
+                        text: 'Mira las referencias de REICOOZX GC, 100% confiable con más de 2000 clientes satisfechos.',
+                        url: window.location.href
+                    });
+                } else {
+                    // Fallback para navegadores que no soportan Web Share API
+                    alert('Comparte este enlace: ' + window.location.href);
+                }
+            } catch (error) {
+                console.log('Error al compartir:', error);
+            }
+        });
+        
+        // Iniciar animaciones cuando la página carga
+        window.addEventListener('load', () => {
+            // Completar la barra de carga
+            loadingBar.style.width = '100%';
+            setTimeout(() => {
+                loadingBar.style.opacity = '0';
+            }, 500);
+            
+            animateProgressBars();
+            createParticles();
+        });
+        
+        // Prevenir zoom en inputs en iOS
+        document.addEventListener('touchstart', (e) => {
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT' || e.target.tagName === 'TEXTAREA') {
+                e.target.style.fontSize = '16px';
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'964951c3234cba37',t:'MTc1MzQyMTk5My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
+
